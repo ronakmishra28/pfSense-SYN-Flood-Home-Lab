@@ -41,9 +41,9 @@ I installed pfSense from scratch on my ASUS Windows laptop using VirtualBox and 
 
 I downloaded the pfSense ISO and created a new VM in VirtualBox. After booting, I completed the text-based console setup wizard (hostname, domain, WAN interface) and reset the default admin password.
 
-![pfSense initial console setup](screenshots/pfsense%20setup%20screen.png)
+![pfSense initial console setup](pfsense-setup-screen.png)
 
-![Resetting default admin password](screenshots/resetting%20the%20password.png)
+![Resetting default admin password](resetting-the-password.png)
 
 ---
 
@@ -51,13 +51,13 @@ I downloaded the pfSense ISO and created a new VM in VirtualBox. After booting, 
 
 I configured the WAN interface and enabled the DHCP server on the LAN side so the Ubuntu machine could get an IP automatically.
 
-![WAN Interface Configuration](screenshots/wan%20settings.png)
+![WAN Interface Configuration](wan-settings.png)
 
-![Unlocking WAN access](screenshots/unlocking%20access%20for%20private%20network%20-%20wan.png)
+![Unlocking WAN access](unlocking-access-for-private-network-wan.png)
 
-![DHCP confirmed](screenshots/dhcp%20confirmed.png)
+![DHCP confirmed](dhcp-confirmed.png)
 
-![Ping successful before rules](screenshots/ping%20successful.png)
+![Ping successful before rules](ping-successful.png)
 
 ---
 
@@ -65,11 +65,11 @@ I configured the WAN interface and enabled the DHCP server on the LAN side so th
 
 I created two rules on the WAN interface: one to block the Kali attacker IP and another to catch SYN flood attempts. I enabled logging on both.
 
-![Creating source IP block rule](screenshots/firewall%20rules%20setting%20source%20ip%20address.png)
+![Creating source IP block rule](firewall-rules-setting-source-ip-address.png)
 
-![Block rule for hping3](screenshots/setting%20block%20rules%20for%20hping.png)
+![Block rule for hping3](setting-block-rules-for-hping.png)
 
-![Both rules active](screenshots/both%20of%20them%20applied.png)
+![Both rules active](both-of-them-applied.png)
 
 ---
 
@@ -81,11 +81,11 @@ From Kali Linux I ran:
 hping3 -S -p 80 --flood --rand-source 10.0.2.3
 ```
 
-![hping3 attack running](screenshots/hping%203%20flood%20attack.png)
+![hping3 attack running](hping-3-flood-attack.png)
 
 Wireshark showing the flood in progress (before rules — ~30,000 packets/sec):
 
-![Wireshark I/O Graph](screenshots/attack%20successful%20wireshark%202.png)
+![Wireshark I/O Graph](attack-successful-wireshark-2.png)
 
 ---
 
@@ -93,11 +93,11 @@ Wireshark showing the flood in progress (before rules — ~30,000 packets/sec):
 
 After applying the rules, I ran the same attack again. pfSense immediately blocked the packets. The web interface stayed responsive, logs showed dropped traffic, and ping from Kali failed.
 
-![Web interface remained responsive](screenshots/after%20attack%20it%20was%20blocked.png)
+![Web interface remained responsive](after-attack-it-was-blocked.png)
 
-![Firewall logs showing blocked packets](screenshots/firewall%20blocked%20data.png)
+![Firewall logs showing blocked packets](firewall-blocked-data.png)
 
-![Dashboard with connection states](screenshots/dashboard.png)
+![Dashboard with connection states](dashboard.png)
 
 ---
 
@@ -108,9 +108,9 @@ After applying the rules, I ran the same attack again. pfSense immediately block
 - Unlocking WAN access for the private network
 - Fixing Ubuntu network connectivity after the flood using `nmcli` and `ip link`
 
-![Adding Kali to WAN settings](screenshots/adding%20kali%20for%20wan%20settings.png)
+![Adding Kali to WAN settings](adding-kali-for-wan-settings.png)
 
-![Temporarily disabling rules for testing](screenshots/firewall%20disabled.png)
+![Temporarily disabling rules for testing](firewall-disabled.png)
 
 ---
 
