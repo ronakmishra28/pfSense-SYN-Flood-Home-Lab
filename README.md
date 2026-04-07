@@ -1,6 +1,3 @@
-# pfSense-SYN-Flood-Home-Lab
-Home lab showing how I set up pfSense as a perimeter firewall, simulated real SYN flood attacks with hping3, and blocked them using custom rules. Full PDF + screenshots included.
-
 # pfSense Firewall Home Lab  
 **Blocking Real SYN Flood Attacks with Custom Firewall Rules**
 
