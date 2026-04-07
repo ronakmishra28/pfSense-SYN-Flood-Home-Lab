@@ -41,7 +41,7 @@ I installed pfSense from scratch on my ASUS Windows laptop using VirtualBox and 
 
 I downloaded the pfSense ISO and created a new VM in VirtualBox. After booting, I completed the text-based console setup wizard (hostname, domain, WAN interface) and reset the default admin password.
 
-![pfSense initial console setup](<img src="screenshots/pfsense-setup-screen.png" width="700"/>)
+![pfSense initial console setup](screenshots/pfsense-setup-screen.png)
 
 ![Resetting default admin password](screenshots/resetting-the-password.png)
 
