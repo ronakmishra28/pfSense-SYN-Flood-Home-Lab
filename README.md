@@ -131,7 +131,7 @@ This lab gave me direct experience with perimeter defense, rule creation, DoS mi
 
 ## Full Project Report
 
-[Download Detailed PDF Report](report.pdf)
+[Download Detailed PDF Report](pfSense-Firewall-Home-Lab-Project.pdf)
 
 ---
 
